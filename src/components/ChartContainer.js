@@ -1,5 +1,6 @@
 import React from 'react'
 import Song from '../components/Song'
+import '../style/chart.css'
 
   const ChartContainer = (props) =>{
   console.log(props);
@@ -13,8 +14,10 @@ import Song from '../components/Song'
   })
 
   return (
+    <div className="chart-container">
     <ol className="song-list">{songList} Hello
     </ol>
+    </div>
   )
 }
 
