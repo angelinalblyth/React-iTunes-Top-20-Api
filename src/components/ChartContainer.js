@@ -1,32 +1,22 @@
 import React from 'react'
-import EntryContainer from '../components/EntryContainer'
+import Song from '../components/Song'
 
-class ChartContainer extends React.Component{
+  const ChartContainer = (props) =>{
+  console.log(props);
+  const songList = props.songs.map(song => {
+    return <li key={song.id.attributes["im:id"]}>
+      <Song
+        artist={song["im:artist"]}
+        title={song["im:name"]}
+        image={song["im:image"]}  />
+      </li>
+  })
 
-
-  render(){
-
-    const chartList = this.props.songs.map((song, index) =>{
-      return <li key={song.id.attributes["im:id"]}>
-        <EntryContainer
-          image={song["im:image"]}
-          artist={song["im:artist"]}
-          title={song["im:name"]}
-        />
-        </li>
-        })
-
-        // Values can be reassigned by calling objectName.key = newValue;
-        // - New key / value pairs can also be assigned in the same way;
-        // - Other way is objectName['key']
+  return (
+    <ol className="song-list">{songList} Hello
+    </ol>
+  )
+}
 
 
-        return(
-          <ol>
-            {chartList}
-          </ol>
-        )
-      }
-    }
-
-    export default ChartContainer;
+  export default ChartContainer;
