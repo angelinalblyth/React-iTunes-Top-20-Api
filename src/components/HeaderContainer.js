@@ -1,4 +1,5 @@
 import React from 'react'
+import '../style/header.css'
 
 class HeaderContainer extends React.Component{
   render(){
