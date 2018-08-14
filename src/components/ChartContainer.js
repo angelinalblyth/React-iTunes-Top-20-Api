@@ -7,7 +7,7 @@ import Song from '../components/Song'
     return <li key={song.id.attributes["im:id"]}>
       <Song
         artist={song["im:artist"]}
-        title={song["im:name"]}
+        song={song["im:name"]}
         image={song["im:image"]}  />
       </li>
   })
